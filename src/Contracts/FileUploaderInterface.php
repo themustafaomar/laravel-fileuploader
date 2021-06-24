@@ -25,7 +25,7 @@ interface FileUploaderInterface
     /**
      * Get the url of the stored file
      * 
-     * @return \Illuminate\Support\Collection
+     * @return string
      */
     public function getUrl();
 }

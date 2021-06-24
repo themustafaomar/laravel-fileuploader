@@ -137,13 +137,13 @@ public function media()
 
 Now you have to pass the newly created `Product` model to `toDatabase` method, see this example
 
+Notice If you want to add other columns to media table feel free to do that, then you will need to pass these additional columns to `toDatabase` method as the second paramater
+
 ```php
 public function store(Request $request)
 {
     $product = Product::create($request->all());
 
-    // If you want to add other columns to media table feel free to do that
-    // Then you will need to pass these additional columns to Database method as the second paramater
     $this->uploader($request->file('images'), '/products')
          ->toDatabase($product, [
             'other_column' => $request->other_column

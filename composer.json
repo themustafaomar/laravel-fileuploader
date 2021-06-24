@@ -1,5 +1,5 @@
 {
-    "name": "mustafaomar/fileuploader",
+    "name": "mustafaomar/laravel-fileuploader",
     "description": "A simple package for uploading media and storing media urls in database",
     "license": "MIT",
     "authors": [

@@ -47,8 +47,10 @@ class FileUploaderMany implements FileUploaderManyInterface
      */
     public function to($path = '/')
     {
+        $this->urls = new Collection();
+
         $this->files->each(function ($file) use ($path) {
-            $this->urls[] = $file->store($path, $this->getDisk());
+            $this->urls->add($file->store($path, $this->getDisk()));
         });
 
         return $this;
@@ -83,11 +85,11 @@ class FileUploaderMany implements FileUploaderManyInterface
      */
     protected function getModels($columns)
     {
-        return $this->files->map(function ($path) use ($columns) {
-            return new $this->options['model']([
-                $this->options['url_column'] => $this->getUrl($path),
-                ...$columns
-            ]);
+        return $this->urls->map(function ($path) use ($columns) {
+            return new $this->options['model'](array_merge(
+                [$this->options['url_column'] => $this->getUrl($path)],
+                $columns
+            ));
         });
     }
 
