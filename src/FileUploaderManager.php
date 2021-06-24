@@ -10,13 +10,6 @@ use FileUploader\Contracts\FileUploaderManagerInterface;
 class FileUploaderManager implements FileUploaderManagerInterface
 {
     /**
-     * @var $files
-     * 
-     * The files array
-     */
-    protected $files;
-
-    /**
      * @var $config
      * 
      * The file uploading config
@@ -24,7 +17,7 @@ class FileUploaderManager implements FileUploaderManagerInterface
     protected array $config;
 
     /**
-     * Create new instance of FileUploader
+     * Create new instance of FileUploaderManager
      */
     public function __construct($config)
     {
@@ -34,7 +27,7 @@ class FileUploaderManager implements FileUploaderManagerInterface
     /**
      * Handle a file
      * 
-     * @param \Illuminate\Http\UploadedFile $file an array of files
+     * @param \Illuminate\Http\UploadedFile $file
      * 
      * @return mixed
      */
@@ -46,7 +39,7 @@ class FileUploaderManager implements FileUploaderManagerInterface
     /**
      * Handle an array of files
      * 
-     * @param \Illuminate\Http\UploadedFile[] $files an array of files
+     * @param \Illuminate\Http\UploadedFile[] $files
      * 
      * @return mixed
      */
