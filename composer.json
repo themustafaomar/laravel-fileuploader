@@ -1,0 +1,27 @@
+{
+    "name": "mustafaomar/fileuploader",
+    "description": "A simple package for uploading media and storing media urls in database",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "themustafaomar",
+            "email": "themustafaomar@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "FileUploader\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "FileUploader\\FileUploaderServiceProvider"
+            ],
+            "aliases": {
+                "FileUploader": "FileUploader\\Facades\\FileUploader"
+            }
+        }
+    },
+    "require": {}
+}
