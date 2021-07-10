@@ -25,8 +25,6 @@ php artisan vendor:publish --provider="FileUploader\FileUploaderServiceProvider"
 
 **`disk`**: A filesystem's disk
 
-**`table`**: The table you want to store urls in
-
 **`model`**: The model class
 
 **`url_column`**: The name of the column you want to store the image link
